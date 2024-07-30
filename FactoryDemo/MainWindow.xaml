@@ -1,0 +1,40 @@
+﻿<Window x:Class="FactoryDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FactoryDemo"
+        mc:Ignorable="d"
+    Title="Policy Creator" Height="450" Width="500">
+    <Grid>
+        <StackPanel Margin="10">
+            <GroupBox Header="Select Policy Type">
+                <StackPanel>
+                    <RadioButton Name="selVeh" Content="Vehicle Insurance Policy" Margin="5" IsChecked="True"/>
+                    <RadioButton Name="selHouse" Content="Household Contents Policy" Margin="5"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Policy Details" Margin="0,10">
+                <StackPanel>
+                    <StackPanel Name="PanelVehicleDetails">
+                        <TextBlock Text="Vehicle Model:" Margin="5"/>
+                        <TextBox Name="txtModel" Margin="5"/>
+                        <TextBlock Text="Vehicle Color:" Margin="5"/>
+                        <TextBox Name="txtColor" Margin="5"/>
+                        <TextBlock Text="Vehicle Year of Registration:" Margin="5"/>
+                        <TextBox Name="txtYrReg" Margin="5"/>
+                    </StackPanel>
+                    <StackPanel Name="PanelHouseholdDetails" Visibility="Collapsed">
+                        <TextBlock Text="Estimated Contents Value:" Margin="5"/>
+                        <TextBox Name="tbEstimatedCostValue" Margin="5"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <Button Content="Create Policy" Click="CreatePolicy_Click" Margin="5"/>
+
+            <Button x:Name="btnShowAllPolicies" Content="Show All Policies" Click="DisplayPolicies_Click" Margin="5" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>
